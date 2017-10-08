@@ -42,13 +42,14 @@ class FileServiceTest {
     void readAndGenerateSynonyms_shouldAppendSynonymsWhenWordAlreadyExists() {
         final String synonym_file = "files/syn3.txt";
         final HashSet<String> syn = new HashSet<>(Arrays.asList("happy", "joyful"));
-        final HashSet<String> combined = new HashSet<>(Arrays.asList("run", "sprint", "jog"));
+        final HashSet<String> combined2 = new HashSet<>(Arrays.asList("run", "sprint", "jog", "dash"));
         final HashMap<String, HashSet<String>> expectedResult = new HashMap<>();
-        expectedResult.put("run", combined);
-        expectedResult.put("sprint", combined);
+        expectedResult.put("run", combined2);
+        expectedResult.put("sprint", combined2);
         expectedResult.put("happy", syn);
         expectedResult.put("joyful", syn);
-        expectedResult.put("jog", combined);
+        expectedResult.put("jog", combined2);
+        expectedResult.put("dash", combined2);
 
         HashMap<String, HashSet<String>> result = FileService.readAndGenerateSynonyms(synonym_file);
         assertEquals(expectedResult, result);

@@ -33,8 +33,10 @@ class FileService {
                         // The synonyms of the word already exist in the map so we append the existing synonyms with the
                         //  new ones and update all existing references
                         HashSet<String> existingWords = synonymMap.get(word);
-                        existingWords.addAll(synonymSet);
                         synonymSet.addAll(existingWords);
+                        for (String existingWord : existingWords) {
+                            synonymMap.put(existingWord, synonymSet);
+                        }
                     } else {
                         synonymMap.put(word, synonymSet);
                     }
