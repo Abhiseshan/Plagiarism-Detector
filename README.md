@@ -42,8 +42,8 @@ Sample output for above inputs:
  - All spcial charcaters are stripped, this includes all characters that do not occur in the english alphabet. Hence only english is supported currently but can be easily expanded by adjusting the expression that controls the stripping. 
 
 ### Complexity
-`tuple.compare(tuple, synonyms)` - O(n) where n is the number of words in each tuple
-`generatePlagiarismScore(synonyms, orgTuples, cmpTuples)` - O(N) => O(N * n) where N is the `min(orgTuples.size(), cmpTuples.size())`
+ - `tuple.compare(tuple, synonyms)` - O(n) where n is the number of words in each tuple
+ - `generatePlagiarismScore(synonyms, orgTuples, cmpTuples)` - O(N) => O(N * n) where N is the `min(orgTuples.size(), cmpTuples.size())`
 
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-grammas-recipe.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/compatibility-ie-6.svg)](http://forthebadge.com)
